@@ -75,7 +75,7 @@ body {
     color: $text;
     background-color: $bg-color;
     display: grid;
-    height: 100vh;
+    // height: 100vh;
     grid-template-rows: $admin-header-height 1fr; //$admin-footer-height;
     grid-template-columns: $admin-nav-width 1fr $admin-aside-width;
     grid-template-areas: "header_nav header_main header_aside" "nav main aside" "nav main aside"; // "footer footer footer";
@@ -367,15 +367,13 @@ main .timeSpent {
     z-index: 2 !important;
 }
 
-main .header,
-main .header {
+.header {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-main .headerText,
-main .headerText {
+.headerText {
     font-size: $font-xs;
     font-weight: 800;
 }
@@ -392,7 +390,7 @@ main .rightElement {
 
 .latestResults .container li {
     display: grid;
-    grid-template-columns: max-content min-content 1fr max-content max-content;
+    grid-template-columns: max-content min-content max-content 1fr max-content;
     align-items: center;
     gap: $spacing-xs;
     font-size: $font-xxxs;
@@ -414,14 +412,15 @@ main .rightElement {
     color: $text-secondary;
 }
 
-.latestResults .progressContainer {
-    width: 8em;
+.progressContainer {
+    width: 100%;
     height: $progress-height;
     background-color: $progress-bg;
     border-radius: $progress-height;
 }
 
-.latestResults .progressContainer .progress {
+.latestResults .progressContainer .progress,
+.languages .progressContainer .progress {
     background-color: $primary;
     border-radius: $progress-height;
     height: 100%;
@@ -567,11 +566,12 @@ main .course:nth-child(3) {
     background-color: #ff808b;
 }
 
-.course .level {
+.level {
     grid-area: level;
     background-color: rgba($color: #fff, $alpha: .1);
-    padding: $spacing-xs;
+    padding: $spacing-s;
     border-radius: $spacing-xs;
+    font-weight: 700;
 }
 
 .course .field {
@@ -591,8 +591,8 @@ main .course:nth-child(3) {
 
 aside {
     display: grid;
-    grid-template-rows: repeat(3, 1fr);
-    gap: $spacing;
+    grid-template-rows: min-content min-content min-content;
+    gap: $spacing-s;
 }
 
 aside .profile {
@@ -628,9 +628,209 @@ aside .profile .add {
 
 aside .profile .name {
     font-weight: 800;
+    z-index: 2;
 }
 
 aside .profile .title {
     font-size: $font-s;
     color: $text-secondary;
+}
+
+aside .languages {
+    z-index: 2;
+    padding: $spacing-m;
+    display: grid;
+    gap: $spacing-xs;
+}
+
+aside .language {
+    display: grid;
+    grid-template-areas: "level text progressContainer" "level levelDescription progressContainer";
+    grid-template-columns: min-content 1fr .5fr;
+    grid-template-rows: min-content min-content;
+    gap: $spacing-xs;
+    align-items: center;
+    border-radius: $spacing-xs;
+    font-size: $font-xs;
+}
+
+aside .reminders .language {
+    grid-template-areas: "level text text" "level levelDescription levelDescription";
+}
+
+.language .level {
+    grid-area: level;
+    background-color: $primary-light;
+    border-radius: $spacing-xs;
+}
+
+.language .progressContainer {
+    grid-row: auto/ span 2;
+}
+
+.language .text {
+    grid-area: text;
+    font-weight: 700;
+}
+
+.language .levelDescription {
+    grid-area: levelDescription;
+    font-size: $font-xxxs;
+}
+
+.reminders {
+    display: grid;
+    grid-template-rows: min-content 1fr;
+    gap: $spacing-s;
+    padding: $spacing-s;
+    z-index: 2;
+}
+
+.reminders .notifications {
+    color: $text-secondary;
+    font-size: $font-l;
+}
+
+.reminders .circle {
+    $size: $spacing-xxs;
+    width: $size;
+    height: $size;
+    border: 2px solid $text-inverted;
+    margin-top: -$spacing-s;
+    margin-left: $spacing-xxs;
+    position: relative;
+}
+
+.level.message {
+    background-color: $primary-light;
+}
+
+.level.danger {
+    background-color: $secondary-light;
+}
+
+.level.message i {
+    color: $primary;
+}
+
+.level.danger i {
+    color: $secondary;
+}
+
+@media screen and (max-width: 1210px) {
+    /* Laptop (Smaller) */
+    main .latestResults,
+    main .timeSpent {
+        grid-column: auto /2 span;
+    }
+    nav {
+        grid-template-rows: min-content min-content;
+    }
+    .timeSpent .progressContainer {
+        height: 12em;
+    }
+    .coursesContainer .course {
+        grid-column: auto / 3 span;
+    }
+}
+
+@media screen and (max-width: 1125px) {
+    /* Laptop (Smaller) */
+    // body {
+    //     grid-template-areas: "header_nav header_main" "nav main" "nav main";
+    //     grid-template-columns: $admin-nav-width 1fr;
+    // }
+    body {
+        grid-template-columns: 11.75em 1fr min-content;
+        grid-template-areas: "header_nav header_main" "nav main" "nav main";
+    }
+    main {
+        grid-column: auto / 2 span;
+        border-right: none;
+        margin-bottom: $admin-header-height;
+    }
+    .header_main {
+        border-right: none;
+    }
+    aside {
+        display: none;
+    }
+    .header_aside {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    /* Tablet (768px) */
+    body {
+        grid-template-columns: 11.75em 1fr;
+        grid-template-areas: "header_main header_main" "main main" "nav nav";
+        background-color: $main-color;
+    }
+    .header_nav,
+    nav .upgradeContainer,
+    nav ul li.active::after,
+    nav ul li.learningPlan {
+        display: none;
+    }
+    nav {
+        grid-column: auto / 3 span;
+        position: fixed;
+        bottom: 0;
+        z-index: 3;
+        background-color: #fff;
+        width: 100%;
+        margin: 0;
+        height: auto;
+        border-top: 1px solid $border;
+    }
+    nav ul {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        padding: $spacing-s;
+        margin-bottom: 0;
+        gap: $spacing-xs;
+    }
+    nav ul a {
+        grid-template-rows: min-content min-content;
+        grid-template-columns: 1fr;
+        place-items: center;
+        gap: $spacing-xs;
+    }
+    nav ul li .messageCount {
+        position: relative;
+        margin-top: -12em;
+    }
+}
+
+@media screen and (max-width: 530px) {
+    body {
+        grid-template-rows: 5em 1fr;
+    }
+    main,
+    .header_main {
+        padding: $spacing-xs;
+        // grid-template-columns: min-content 1fr min-content;
+    }
+    .header_main {
+        grid-template-columns: min-content 1fr min-content;
+    }
+    .header_main .date {
+        text-align: right;
+    }
+    main .welcomeBack {
+        padding: 0 $spacing-xs;
+    }
+    main .welcomeBack .textContainer {
+        padding: $spacing-xs;
+        grid-column: auto / 2 span;
+        gap: $spacing-xxs;
+    }
+    .welcomeBack svg {
+        display: none;
+    }
+    .header_aside,
+    .header_nav {
+        display: none;
+    }
 }

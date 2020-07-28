@@ -9,7 +9,6 @@ body {
   color: #131336;
   background-color: #fff;
   display: grid;
-  height: 100vh;
   grid-template-rows: 6.25em 1fr;
   grid-template-columns: 11.75em 1fr 19.5em;
   grid-template-areas: "header_nav header_main header_aside" "nav main aside" "nav main aside";
@@ -260,14 +259,12 @@ main .timeSpent {
   padding: 1.5em;
   z-index: 2 !important; }
 
-main .header,
-main .header {
+.header {
   display: flex;
   justify-content: space-between;
   align-items: center; }
 
-main .headerText,
-main .headerText {
+.headerText {
   font-size: 0.8rem;
   font-weight: 800; }
 
@@ -281,7 +278,7 @@ main .rightElement {
 
 .latestResults .container li {
   display: grid;
-  grid-template-columns: max-content min-content 1fr max-content max-content;
+  grid-template-columns: max-content min-content max-content 1fr max-content;
   align-items: center;
   gap: 0.75em;
   font-size: 0.7rem; }
@@ -299,13 +296,14 @@ main .rightElement {
 .latestResults .field {
   color: #b1b6d1; }
 
-.latestResults .progressContainer {
-  width: 8em;
+.progressContainer {
+  width: 100%;
   height: 0.4em;
   background-color: #e1e2eb;
   border-radius: 0.4em; }
 
-.latestResults .progressContainer .progress {
+.latestResults .progressContainer .progress,
+.languages .progressContainer .progress {
   background-color: #5e81f4;
   border-radius: 0.4em;
   height: 100%; }
@@ -406,11 +404,12 @@ main .course:nth-child(2) {
 main .course:nth-child(3) {
   background-color: #ff808b; }
 
-.course .level {
+.level {
   grid-area: level;
   background-color: rgba(255, 255, 255, 0.1);
-  padding: 0.75em;
-  border-radius: 0.75em; }
+  padding: 1em;
+  border-radius: 0.75em;
+  font-weight: 700; }
 
 .course .field {
   grid-area: field;
@@ -426,8 +425,8 @@ main .course:nth-child(3) {
 
 aside {
   display: grid;
-  grid-template-rows: repeat(3, 1fr);
-  gap: 2em; }
+  grid-template-rows: min-content min-content min-content;
+  gap: 1em; }
 
 aside .profile {
   display: grid;
@@ -457,8 +456,161 @@ aside .profile .add {
   justify-self: end; }
 
 aside .profile .name {
-  font-weight: 800; }
+  font-weight: 800;
+  z-index: 2; }
 
 aside .profile .title {
   font-size: 0.9rem;
   color: #b1b6d1; }
+
+aside .languages {
+  z-index: 2;
+  padding: 1.5em;
+  display: grid;
+  gap: 0.75em; }
+
+aside .language {
+  display: grid;
+  grid-template-areas: "level text progressContainer" "level levelDescription progressContainer";
+  grid-template-columns: min-content 1fr .5fr;
+  grid-template-rows: min-content min-content;
+  gap: 0.75em;
+  align-items: center;
+  border-radius: 0.75em;
+  font-size: 0.8rem; }
+
+aside .reminders .language {
+  grid-template-areas: "level text text" "level levelDescription levelDescription"; }
+
+.language .level {
+  grid-area: level;
+  background-color: #eef2fd;
+  border-radius: 0.75em; }
+
+.language .progressContainer {
+  grid-row: auto/ span 2; }
+
+.language .text {
+  grid-area: text;
+  font-weight: 700; }
+
+.language .levelDescription {
+  grid-area: levelDescription;
+  font-size: 0.7rem; }
+
+.reminders {
+  display: grid;
+  grid-template-rows: min-content 1fr;
+  gap: 1em;
+  padding: 1em;
+  z-index: 2; }
+
+.reminders .notifications {
+  color: #b1b6d1;
+  font-size: 1.25rem; }
+
+.reminders .circle {
+  width: 0.5em;
+  height: 0.5em;
+  border: 2px solid #fff;
+  margin-top: -1em;
+  margin-left: 0.5em;
+  position: relative; }
+
+.level.message {
+  background-color: #eef2fd; }
+
+.level.danger {
+  background-color: #f7e5e9; }
+
+.level.message i {
+  color: #5e81f4; }
+
+.level.danger i {
+  color: #ff606d; }
+
+@media screen and (max-width: 1210px) {
+  /* Laptop (Smaller) */
+  main .latestResults,
+  main .timeSpent {
+    grid-column: auto /2 span; }
+  nav {
+    grid-template-rows: min-content min-content; }
+  .timeSpent .progressContainer {
+    height: 12em; }
+  .coursesContainer .course {
+    grid-column: auto / 3 span; } }
+
+@media screen and (max-width: 1125px) {
+  /* Laptop (Smaller) */
+  body {
+    grid-template-columns: 11.75em 1fr min-content;
+    grid-template-areas: "header_nav header_main" "nav main" "nav main"; }
+  main {
+    grid-column: auto / 2 span;
+    border-right: none;
+    margin-bottom: 6.25em; }
+  .header_main {
+    border-right: none; }
+  aside {
+    display: none; }
+  .header_aside {
+    display: none; } }
+
+@media screen and (max-width: 768px) {
+  /* Tablet (768px) */
+  body {
+    grid-template-columns: 11.75em 1fr;
+    grid-template-areas: "header_main header_main" "main main" "nav nav";
+    background-color: #f5f5fb; }
+  .header_nav,
+  nav .upgradeContainer,
+  nav ul li.active::after,
+  nav ul li.learningPlan {
+    display: none; }
+  nav {
+    grid-column: auto / 3 span;
+    position: fixed;
+    bottom: 0;
+    z-index: 3;
+    background-color: #fff;
+    width: 100%;
+    margin: 0;
+    height: auto;
+    border-top: 1px solid #e3e3eb; }
+  nav ul {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    padding: 1em;
+    margin-bottom: 0;
+    gap: 0.75em; }
+  nav ul a {
+    grid-template-rows: min-content min-content;
+    grid-template-columns: 1fr;
+    place-items: center;
+    gap: 0.75em; }
+  nav ul li .messageCount {
+    position: relative;
+    margin-top: -12em; } }
+
+@media screen and (max-width: 530px) {
+  body {
+    grid-template-rows: 5em 1fr; }
+  main,
+  .header_main {
+    padding: 0.75em; }
+  .header_main {
+    grid-template-columns: min-content 1fr min-content; }
+  .header_main .date {
+    text-align: right; }
+  main .welcomeBack {
+    padding: 0 0.75em; }
+  main .welcomeBack .textContainer {
+    padding: 0.75em;
+    grid-column: auto / 2 span;
+    gap: 0.5em; }
+  .welcomeBack svg {
+    display: none; }
+  .header_aside,
+  .header_nav {
+    display: none; } }
