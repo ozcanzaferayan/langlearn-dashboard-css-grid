@@ -1,4 +1,4 @@
-# CSS Grid template
+# Langlearn CSS Grid Dashboard
 
 ## Installation
 
@@ -34,18 +34,18 @@ gulp lighthouse
 
 ## Other parts about project
 
-Fitness admin panel CSS Grid implementation based on https://dribbble.com/shots/insert_dribble_url_part_here
+Linglee CSS Grid implementation based on https://dribbble.com/shots/7052720-Linglee-Languages-learning-platform
 
 ### Social media preview
 
-![Social media preview](https://raw.githubusercontent.com/ozcanzaferayan/css-grid-dashboard-template/master/art/social/social.png)
+![Social media preview](https://raw.githubusercontent.com/ozcanzaferayan/langlearn-dashboard-css-grid/master/art/social/social.png)
 
 ### Screenshots
 
 #### Desktop UI
 
-![Screenshot](https://raw.githubusercontent.com/ozcanzaferayan/css-grid-dashboard-template/master/art/screenshot/web.png)
+![Screenshot](https://raw.githubusercontent.com/ozcanzaferayan/langlearn-dashboard-css-grid/master/art/screenshot/web.png)
 
 #### Mobile UI
 
-![Screenshot](https://raw.githubusercontent.com/ozcanzaferayan/css-grid-dashboard-template/master/art/screenshot/mobile.png)
+![Screenshot](https://raw.githubusercontent.com/ozcanzaferayan/langlearn-dashboard-css-grid/master/art/screenshot/mobile.png)
