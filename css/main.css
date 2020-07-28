@@ -342,6 +342,134 @@ main .rightElement {
   background-color: #5e81f4;
   justify-self: center; }
 
+.day:nth-child(0) .progressContainer .vocabulary {
+  background-color: #ff808b;
+  height: 21%; }
+
+.day:nth-child(0) .progressContainer .grammar {
+  background-color: #4d4cac;
+  height: 20%; }
+
+.day:nth-child(0) .progressContainer .listening {
+  background-color: #5e81f4;
+  height: 27%; }
+
+.day:nth-child(0) .progressContainer .writing {
+  background-color: #c8c9e9;
+  height: 32%; }
+
+.day:nth-child(1) .progressContainer .vocabulary {
+  background-color: #ff808b;
+  height: 69%; }
+
+.day:nth-child(1) .progressContainer .grammar {
+  background-color: #4d4cac;
+  height: 11%; }
+
+.day:nth-child(1) .progressContainer .listening {
+  background-color: #5e81f4;
+  height: 3%; }
+
+.day:nth-child(1) .progressContainer .writing {
+  background-color: #c8c9e9;
+  height: 17%; }
+
+.day:nth-child(2) .progressContainer .vocabulary {
+  background-color: #ff808b;
+  height: 2%; }
+
+.day:nth-child(2) .progressContainer .grammar {
+  background-color: #4d4cac;
+  height: 1%; }
+
+.day:nth-child(2) .progressContainer .listening {
+  background-color: #5e81f4;
+  height: 1%; }
+
+.day:nth-child(2) .progressContainer .writing {
+  background-color: #c8c9e9;
+  height: 96%; }
+
+.day:nth-child(3) .progressContainer .vocabulary {
+  background-color: #ff808b;
+  height: 42%; }
+
+.day:nth-child(3) .progressContainer .grammar {
+  background-color: #4d4cac;
+  height: 50%; }
+
+.day:nth-child(3) .progressContainer .listening {
+  background-color: #5e81f4;
+  height: 0%; }
+
+.day:nth-child(3) .progressContainer .writing {
+  background-color: #c8c9e9;
+  height: 8%; }
+
+.day:nth-child(4) .progressContainer .vocabulary {
+  background-color: #ff808b;
+  height: 53%; }
+
+.day:nth-child(4) .progressContainer .grammar {
+  background-color: #4d4cac;
+  height: 3%; }
+
+.day:nth-child(4) .progressContainer .listening {
+  background-color: #5e81f4;
+  height: 5%; }
+
+.day:nth-child(4) .progressContainer .writing {
+  background-color: #c8c9e9;
+  height: 39%; }
+
+.day:nth-child(5) .progressContainer .vocabulary {
+  background-color: #ff808b;
+  height: 19%; }
+
+.day:nth-child(5) .progressContainer .grammar {
+  background-color: #4d4cac;
+  height: 3%; }
+
+.day:nth-child(5) .progressContainer .listening {
+  background-color: #5e81f4;
+  height: 0%; }
+
+.day:nth-child(5) .progressContainer .writing {
+  background-color: #c8c9e9;
+  height: 78%; }
+
+.day:nth-child(6) .progressContainer .vocabulary {
+  background-color: #ff808b;
+  height: 17%; }
+
+.day:nth-child(6) .progressContainer .grammar {
+  background-color: #4d4cac;
+  height: 37%; }
+
+.day:nth-child(6) .progressContainer .listening {
+  background-color: #5e81f4;
+  height: 45%; }
+
+.day:nth-child(6) .progressContainer .writing {
+  background-color: #c8c9e9;
+  height: 1%; }
+
+.day:nth-child(7) .progressContainer .vocabulary {
+  background-color: #ff808b;
+  height: 69%; }
+
+.day:nth-child(7) .progressContainer .grammar {
+  background-color: #4d4cac;
+  height: 1%; }
+
+.day:nth-child(7) .progressContainer .listening {
+  background-color: #5e81f4;
+  height: 5%; }
+
+.day:nth-child(7) .progressContainer .writing {
+  background-color: #c8c9e9;
+  height: 25%; }
+
 .timeSpent .legendContainer {
   display: grid;
   grid-template-columns: repeat(4, 1fr);

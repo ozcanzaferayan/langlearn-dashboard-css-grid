@@ -467,30 +467,31 @@ main .rightElement {
     justify-self: center;
 }
 
-// @for $i from 0 to 8 {
-//     $writing-percent: random(100);
-//     $vocabulary-percent: random(100 - $writing-percent);
-//     $grammar-percent: random(100 - $writing-percent - $vocabulary-percent);
-//     $listening-percent: 100 - $writing-percent - $vocabulary-percent - $grammar-percent;
-//     .day:nth-child(#{$i}) .progressContainer {
-//         .vocabulary {
-//             background-color: $vocabulary;
-//             height: percentage($vocabulary-percent / 100);
-//         }
-//         .grammar {
-//             background-color: $grammar;
-//             height: percentage($grammar-percent / 100);
-//         }
-//         .listening {
-//             background-color: $listening;
-//             height: percentage($listening-percent / 100);
-//         }
-//         .writing {
-//             background-color: $writing;
-//             height: percentage($writing-percent / 100);
-//         }
-//     }
-// }
+@for $i from 0 to 8 {
+    $writing-percent: random(100);
+    $vocabulary-percent: random(100 - $writing-percent);
+    $grammar-percent: random(100 - $writing-percent - $vocabulary-percent);
+    $listening-percent: 100 - $writing-percent - $vocabulary-percent - $grammar-percent;
+    .day:nth-child(#{$i}) .progressContainer {
+        .vocabulary {
+            background-color: $vocabulary;
+            height: percentage($vocabulary-percent / 100);
+        }
+        .grammar {
+            background-color: $grammar;
+            height: percentage($grammar-percent / 100);
+        }
+        .listening {
+            background-color: $listening;
+            height: percentage($listening-percent / 100);
+        }
+        .writing {
+            background-color: $writing;
+            height: percentage($writing-percent / 100);
+        }
+    }
+}
+
 .timeSpent .legendContainer {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
