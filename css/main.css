@@ -4,6 +4,7 @@
   box-sizing: border-box; }
 
 body {
+  height: 100vh;
   margin: 0;
   font-family: "Mulish", sans-serif;
   color: #131336;
@@ -344,131 +345,131 @@ main .rightElement {
 
 .day:nth-child(0) .progressContainer .vocabulary {
   background-color: #ff808b;
-  height: 21%; }
+  height: 15%; }
 
 .day:nth-child(0) .progressContainer .grammar {
   background-color: #4d4cac;
-  height: 20%; }
+  height: 4%; }
 
 .day:nth-child(0) .progressContainer .listening {
   background-color: #5e81f4;
-  height: 27%; }
+  height: 0%; }
 
 .day:nth-child(0) .progressContainer .writing {
   background-color: #c8c9e9;
-  height: 32%; }
+  height: 81%; }
 
 .day:nth-child(1) .progressContainer .vocabulary {
   background-color: #ff808b;
-  height: 69%; }
+  height: 2%; }
 
 .day:nth-child(1) .progressContainer .grammar {
   background-color: #4d4cac;
-  height: 11%; }
+  height: 4%; }
 
 .day:nth-child(1) .progressContainer .listening {
   background-color: #5e81f4;
-  height: 3%; }
+  height: 16%; }
 
 .day:nth-child(1) .progressContainer .writing {
   background-color: #c8c9e9;
-  height: 17%; }
+  height: 78%; }
 
 .day:nth-child(2) .progressContainer .vocabulary {
   background-color: #ff808b;
-  height: 2%; }
+  height: 14%; }
 
 .day:nth-child(2) .progressContainer .grammar {
   background-color: #4d4cac;
-  height: 1%; }
+  height: 2%; }
 
 .day:nth-child(2) .progressContainer .listening {
   background-color: #5e81f4;
-  height: 1%; }
+  height: 9%; }
 
 .day:nth-child(2) .progressContainer .writing {
   background-color: #c8c9e9;
-  height: 96%; }
+  height: 75%; }
 
 .day:nth-child(3) .progressContainer .vocabulary {
   background-color: #ff808b;
-  height: 42%; }
+  height: 46%; }
 
 .day:nth-child(3) .progressContainer .grammar {
   background-color: #4d4cac;
-  height: 50%; }
+  height: 5%; }
 
 .day:nth-child(3) .progressContainer .listening {
   background-color: #5e81f4;
-  height: 0%; }
+  height: 8%; }
 
 .day:nth-child(3) .progressContainer .writing {
   background-color: #c8c9e9;
-  height: 8%; }
+  height: 41%; }
 
 .day:nth-child(4) .progressContainer .vocabulary {
   background-color: #ff808b;
-  height: 53%; }
+  height: 79%; }
 
 .day:nth-child(4) .progressContainer .grammar {
   background-color: #4d4cac;
-  height: 3%; }
+  height: 1%; }
 
 .day:nth-child(4) .progressContainer .listening {
   background-color: #5e81f4;
-  height: 5%; }
+  height: 3%; }
 
 .day:nth-child(4) .progressContainer .writing {
   background-color: #c8c9e9;
-  height: 39%; }
+  height: 17%; }
 
 .day:nth-child(5) .progressContainer .vocabulary {
   background-color: #ff808b;
-  height: 19%; }
+  height: 7%; }
 
 .day:nth-child(5) .progressContainer .grammar {
   background-color: #4d4cac;
-  height: 3%; }
+  height: 44%; }
 
 .day:nth-child(5) .progressContainer .listening {
   background-color: #5e81f4;
-  height: 0%; }
+  height: 30%; }
 
 .day:nth-child(5) .progressContainer .writing {
   background-color: #c8c9e9;
-  height: 78%; }
+  height: 19%; }
 
 .day:nth-child(6) .progressContainer .vocabulary {
   background-color: #ff808b;
-  height: 17%; }
+  height: 95%; }
 
 .day:nth-child(6) .progressContainer .grammar {
   background-color: #4d4cac;
-  height: 37%; }
+  height: 2%; }
 
 .day:nth-child(6) .progressContainer .listening {
   background-color: #5e81f4;
-  height: 45%; }
+  height: 1%; }
 
 .day:nth-child(6) .progressContainer .writing {
   background-color: #c8c9e9;
-  height: 1%; }
+  height: 2%; }
 
 .day:nth-child(7) .progressContainer .vocabulary {
   background-color: #ff808b;
-  height: 69%; }
+  height: 5%; }
 
 .day:nth-child(7) .progressContainer .grammar {
   background-color: #4d4cac;
-  height: 1%; }
+  height: 11%; }
 
 .day:nth-child(7) .progressContainer .listening {
   background-color: #5e81f4;
-  height: 5%; }
+  height: 9%; }
 
 .day:nth-child(7) .progressContainer .writing {
   background-color: #c8c9e9;
-  height: 25%; }
+  height: 75%; }
 
 .timeSpent .legendContainer {
   display: grid;
@@ -659,6 +660,8 @@ aside .reminders .language {
 
 @media screen and (max-width: 1210px) {
   /* Laptop (Smaller) */
+  body {
+    height: 100%; }
   main .latestResults,
   main .timeSpent {
     grid-column: auto /2 span; }

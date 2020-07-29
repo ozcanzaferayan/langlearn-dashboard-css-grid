@@ -70,6 +70,7 @@ $progress-height: .4em;
 }
 
 body {
+    height: 100vh;
     margin: 0;
     font-family: $font-family-body;
     color: $text;
@@ -720,6 +721,9 @@ aside .reminders .language {
 
 @media screen and (max-width: 1210px) {
     /* Laptop (Smaller) */
+    body {
+        height: 100%;
+    }
     main .latestResults,
     main .timeSpent {
         grid-column: auto /2 span;
